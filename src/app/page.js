@@ -452,9 +452,9 @@ export default function Portfolio() {
           className="py-20 px-6 bg-slate-100/50 dark:bg-slate-900/50"
         >
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl font-bold mb-4">Let's Work Together</h2>
+            <h2 className="text-4xl font-bold mb-4">Let&apos;s Work Together</h2>
             <p className="text-xl text-slate-600 dark:text-slate-400 mb-8">
-              Open to new opportunities across Canada. Let's build something
+              Open to new opportunities across Canada. Let&apos;s build something
               amazing!
             </p>
             <div className="flex justify-center gap-6 flex-wrap">
