@@ -217,7 +217,7 @@ export default function Portfolio() {
                 <div className="space-y-4">
                   <h2 className="text-3xl font-bold mb-6">About Me</h2>
                   <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-                    I'm a passionate Front-End Developer based in{" "}
+                    I&apos;m a passionate Front-End Developer based in{" "}
                     <strong className="text-emerald-600 dark:text-emerald-400">
                       Montreal, Canada
                     </strong>
@@ -226,7 +226,7 @@ export default function Portfolio() {
                   </p>
                   <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
                     With expertise in React and TypeScript, I focus on building
-                    scalable applications with clean, maintainable code. I'm
+                    scalable applications with clean, maintainable code. I&apos;m
                     always learning and staying up-to-date with the latest web
                     technologies.
                   </p>
