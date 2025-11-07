@@ -128,8 +128,8 @@ export default function Portfolio() {
                   <span>Based in Montreal, Quebec</span>
                   <Image
                     src="./Quebec-Flag.svg"
-                    alt="Québec flag"
-                    title="Québec"
+                    alt="Quebec flag"
+                    title="Quebec"
                     width={18}
                     height={18}
                     className="rounded-sm"
@@ -137,7 +137,7 @@ export default function Portfolio() {
                 </span>
               </div>
               <h1 className="text-5xl md:text-6xl font-bold leading-tight">
-                Hi, I'm{" "}
+                Hi, I&apos;m{" "}
                 <span className="bg-gradient-to-r from-emerald-500 to-teal-500 bg-clip-text text-transparent">
                   Ali Farahbakhsh
                 </span>
@@ -194,11 +194,16 @@ export default function Portfolio() {
             >
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full blur-2xl opacity-30 animate-pulse"></div>
-                <img
-                  src="/me.png"
-                  alt="Ali Farahbakhsh"
-                  className="relative w-92 h-92 object-cover rounded-full border-4 border-white dark:border-slate-700 shadow-2xl"
-                />
+                <div className="relative w-92 h-92">
+                  <Image
+                    src="/me.png"
+                    alt="Ali Farahbakhsh"
+                    fill
+                    sizes="368px"
+                    className="object-cover rounded-full border-4 border-white dark:border-slate-700 shadow-2xl"
+                    priority
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -314,10 +319,13 @@ export default function Portfolio() {
                   className="group bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-200 dark:border-slate-700"
                 >
                   <div className="relative overflow-hidden">
-                    <img
+                    <Image
                       src={project.image}
                       alt={project.title}
+                      width={1200}
+                      height={500}
                       className="w-full h-56 object-cover group-hover:scale-110 transition duration-500"
+                      priority={i === 0}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
                   </div>
