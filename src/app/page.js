@@ -231,29 +231,42 @@ export default function Portfolio() {
               <div className="grid md:grid-cols-2 gap-12">
                 <div className="space-y-4">
                   <h2 className="text-3xl font-bold mb-6">About Me</h2>
+
                   <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-                    I&apos;m a passionate Front-End Developer based in{" "}
+                    I&apos;m a Front-End Developer based in{" "}
                     <strong className="text-emerald-600 dark:text-emerald-400">
                       Montreal, Canada
                     </strong>
-                    . I love creating web experiences that are not only
-                    beautiful but also fast and accessible.
+                    , focused on crafting performant, scalable, and visually
+                    refined web applications.
                   </p>
+
                   <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-                    With expertise in React and TypeScript, I focus on building
-                    scalable applications with clean, maintainable code.
-                    I&apos;m always learning and staying up-to-date with the
-                    latest web technologies.
+                    I specialize in <strong>React</strong>,{" "}
+                    <strong>Next.js</strong>, <strong>TypeScript</strong>, and{" "}
+                    <strong>Tailwind CSS</strong>, building clean, consistent,
+                    and maintainable user interfaces that balance speed with
+                    design quality.
                   </p>
+
                   <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-                    Bilingual (English/French) and available for full-time
-                    opportunities in the Montreal tech scene.
+                    I value <strong>clear communication</strong>,{" "}
+                    <strong>attention to detail</strong>, and a{" "}
+                    <strong>collaborative mindset</strong> — creating digital
+                    experiences that are not just functional, but meaningful.
+                  </p>
+
+                  <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                    <strong>Bilingual (English/French)</strong> and open to
+                    full-time opportunities in{" "}
+                    <strong>Montreal and across Canada</strong>.
                   </p>
                 </div>
+
                 <div className="grid grid-cols-2 gap-6">
                   <div className="bg-gradient-to-br from-emerald-500/10 to-teal-500/10 rounded-2xl p-6 border border-emerald-500/20">
                     <div className="text-4xl font-bold text-emerald-600 dark:text-emerald-400 mb-2">
-                      3+
+                      5+
                     </div>
                     <div className="text-slate-600 dark:text-slate-400">
                       Years Experience
