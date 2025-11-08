@@ -14,14 +14,16 @@ import {
 } from "react-icons/si";
 import ReactCountryFlag from "react-country-flag";
 import Image from "next/image";
+import { useTheme } from "next-themes";
 
 export default function Portfolio() {
-  const [darkMode, setDarkMode] = useState(true);
   const [scrolled, setScrolled] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const { resolvedTheme, setTheme } = useTheme();
 
   useEffect(() => {
-    setMounted(true);
+    const timer = requestAnimationFrame(() => setMounted(true));
+    return () => cancelAnimationFrame(timer);
   }, []);
 
   useEffect(() => {
@@ -32,9 +34,7 @@ export default function Portfolio() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  if (!mounted) {
-    return null;
-  }
+  if (!mounted) return null;
 
   const skills = [
     { name: "React", Icon: SiReact, color: "text-cyan-400" },
@@ -69,11 +69,11 @@ export default function Portfolio() {
   ];
 
   return (
-    <div className={`${darkMode ? "dark" : ""} transition-colors duration-300`}>
+    <div className="transition-colors duration-300">
       <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800 text-slate-900 dark:text-slate-100">
         {/* Navigation */}
         <nav
-          className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          className={`fixed top-0 left-0 right-0 z-50 ${
             scrolled
               ? "bg-white/80 dark:bg-slate-900/80 backdrop-blur-lg shadow-lg"
               : "bg-transparent"
@@ -109,10 +109,16 @@ export default function Portfolio() {
                 Contact
               </a>
               <button
-                onClick={() => setDarkMode(!darkMode)}
+                onClick={() =>
+                  setTheme(resolvedTheme === "dark" ? "light" : "dark")
+                }
                 className="p-2 rounded-lg bg-slate-200 dark:bg-slate-700 hover:scale-110 transition"
               >
-                {darkMode ? <Sun size={20} /> : <Moon size={20} />}
+                {resolvedTheme === "dark" ? (
+                  <Sun size={20} />
+                ) : (
+                  <Moon size={20} />
+                )}
               </button>
             </div>
           </div>
@@ -498,18 +504,10 @@ export default function Portfolio() {
 
         <style>{`
           @keyframes fadeIn {
-            from {
-              opacity: 0;
-              transform: translateY(20px);
-            }
-            to {
-              opacity: 1;
-              transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
           }
-          .animate-fadeIn {
-            animation: fadeIn 0.8s ease-out forwards;
-          }
+          .animate-fadeIn { animation: fadeIn 0.8s ease-out forwards; }
         `}</style>
       </div>
     </div>
