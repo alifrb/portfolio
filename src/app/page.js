@@ -18,6 +18,11 @@ import Image from "next/image";
 export default function Portfolio() {
   const [darkMode, setDarkMode] = useState(true);
   const [scrolled, setScrolled] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,6 +31,10 @@ export default function Portfolio() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  if (!mounted) {
+    return null;
+  }
 
   const skills = [
     { name: "React", Icon: SiReact, color: "text-cyan-400" },
@@ -226,9 +235,9 @@ export default function Portfolio() {
                   </p>
                   <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
                     With expertise in React and TypeScript, I focus on building
-                    scalable applications with clean, maintainable code. I&apos;m
-                    always learning and staying up-to-date with the latest web
-                    technologies.
+                    scalable applications with clean, maintainable code.
+                    I&apos;m always learning and staying up-to-date with the
+                    latest web technologies.
                   </p>
                   <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
                     Bilingual (English/French) and available for full-time
@@ -452,10 +461,12 @@ export default function Portfolio() {
           className="py-20 px-6 bg-slate-100/50 dark:bg-slate-900/50"
         >
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl font-bold mb-4">Let&apos;s Work Together</h2>
+            <h2 className="text-4xl font-bold mb-4">
+              Let&apos;s Work Together
+            </h2>
             <p className="text-xl text-slate-600 dark:text-slate-400 mb-8">
-              Open to new opportunities across Canada. Let&apos;s build something
-              amazing!
+              Open to new opportunities across Canada. Let&apos;s build
+              something amazing!
             </p>
             <div className="flex justify-center gap-6 flex-wrap">
               <a
